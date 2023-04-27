@@ -1,0 +1,207 @@
+﻿<UserControl x:Class="GUI.NNStateUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI"
+             mc:Ignorable="d" 
+             d:DesignWidth="380"
+             Background="Transparent">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="Header">
+            <Setter Property="Margin" Value="20,10,20,10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Header1">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Header3">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Header4">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <Border Margin="40,10"  Padding="0" 
+                BorderThickness="0,0,0,1" BorderBrush="Black"
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+            <TextBlock Style="{StaticResource ResourceKey=Header}"
+               Text="Характеристики нейросети" />
+        </Border>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" 
+               Style="{StaticResource ResourceKey=Header1}"
+               Text="Конфигурация НС" />
+
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"
+                BorderBrush="Black"
+                Margin=" 0, 20, 10, 20"
+                BorderThickness="0,0,0,1">
+        </Border>
+
+        <Border Margin="10,0,0,0" Grid.Row="2" Grid.Column="0">
+            <TextBlock   
+               Style="{StaticResource ResourceKey=Header3}"
+               Text="Имя нейросети:" />
+        </Border>
+
+        <StackPanel Margin="10,0,0,0" Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Name="NNNameLable"   
+                       Width="150"
+               Style="{StaticResource ResourceKey=Header4}"
+               Text="имя нейросети бла" />
+            <Button Name = "NNNameInfo"
+                    Background="Transparent" BorderThickness="0">
+                <Grid>
+                    <Ellipse Width="20"
+                             Height="20"
+                             StrokeThickness="1"
+                             Stroke="Black"/>
+                    <TextBlock HorizontalAlignment="Center">i</TextBlock>
+                </Grid>
+
+            </Button>
+        </StackPanel>
+
+        <Border Margin="10,0,0,0" Grid.Row="3" Grid.Column="0">
+            <TextBlock  
+               Style="{StaticResource ResourceKey=Header3}"
+               Text="Параметр сходства:" />
+        </Border>
+
+        <StackPanel Margin="10,0,0,0" Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Name="NNSimilarytyParameterLable"   
+                       Width="150"
+               Style="{StaticResource ResourceKey=Header4}"
+               Text="2.2" />
+            <Button Name = "NNSimilarytiParameterInfo"
+                    Background="Transparent" BorderThickness="0">
+                <Grid>
+                    <Ellipse Width="20"
+                             Height="20"
+                             StrokeThickness="1"
+                             Stroke="Black"/>
+                    <TextBlock HorizontalAlignment="Center">i</TextBlock>
+                </Grid>
+
+            </Button>
+        </StackPanel>
+
+        <Border Margin="10,0,0,0" Grid.Row="4" Grid.Column="0">
+            <TextBlock   
+               Style="{StaticResource ResourceKey=Header3}"
+               Text="Скорость адаптации:" />
+        </Border>
+
+        <StackPanel Margin="10,0,0,0" Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Name="NNAdaptationSpeedLable"   
+                       Width="150"
+               Style="{StaticResource ResourceKey=Header4}"
+               Text="3.3" />
+            <Button Name = "NNAdaptationSpeedInfo"
+                    Background="Transparent" BorderThickness="0">
+                <Grid>
+                    <Ellipse Width="20"
+                             Height="20"
+                             StrokeThickness="1"
+                             Stroke="Black"/>
+                    <TextBlock HorizontalAlignment="Center">i</TextBlock>
+                </Grid>
+
+            </Button>
+        </StackPanel>
+        
+        <TextBlock Grid.Row="5" Grid.Column="0" 
+               Style="{StaticResource ResourceKey=Header1}"
+               Text="Состояние НС" />
+
+        <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1"
+                BorderBrush="Black"
+                Margin=" 0, 20, 10, 20"
+                BorderThickness="0,0,0,1">
+        </Border>
+
+        <Border Margin="10,0,0,0" Grid.Row="6" Grid.Column="0">
+            <Label   
+               VerticalAlignment ="Center"
+               HorizontalAlignment="Left"
+               FontSize="14"
+               Content="Размер входного вектора:" />
+        </Border>
+
+        <StackPanel Margin="10,0,0,0" Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Name="NNVectorSizeLable"   
+                       Width="150"
+               Style="{StaticResource ResourceKey=Header4}"
+               Text="4" />
+            <Button Name = "NNEnterVectorSizeInfo"
+                    Background="Transparent" BorderThickness="0">
+                <Grid>
+                    <Ellipse Width="20"
+                             Height="20"
+                             StrokeThickness="1"
+                             Stroke="Black"/>
+                    <TextBlock HorizontalAlignment="Center">i</TextBlock>
+                </Grid>
+
+            </Button>
+        </StackPanel>
+
+        <Border Margin="10,0,0,0" Grid.Row="7" Grid.Column="0">
+            <Label   
+               VerticalAlignment ="Center"
+               HorizontalAlignment="Left"
+               FontSize="14"
+               Content="Количество кластеров:" />
+        </Border>
+
+        <StackPanel Margin="10,0,0,0" Grid.Row="8" Grid.Column="1" Orientation="Horizontal">
+            <TextBlock Name="NNClucterSizeLable"   
+                       Width="150"
+               Style="{StaticResource ResourceKey=Header4}"
+               Text="5" />
+            <Button Name = "NNClucterSizeInfo"
+                    Background="Transparent" BorderThickness="0">
+                <Grid>
+                    <Ellipse Width="20"
+                             Height="20"
+                             StrokeThickness="1"
+                             Stroke="Black"/>
+                    <TextBlock HorizontalAlignment="Center">i</TextBlock>
+                </Grid>
+
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
